@@ -11,7 +11,7 @@ object TestContinuousCoverage {
   )
  
   def main(args: Array[String]): Unit = {
-    val longestCoverage = getLongestCoverage(coverages)
+    val longestCoverage = Cov.getLongestCoverage(coverages)
 
     println(s"For coverages $coverages\nlongest is $longestCoverage")
   }
