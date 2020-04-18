@@ -11,7 +11,7 @@ case class Cov(eff: Int, term: Int) {
 }
 object Cov {
   def getLongestCoverage(covs: List[Cov]) : Cov = {
-    @tailrec
+    //@tailrec
     def iter(
       bestSoFar : Cov,
       current : Cov,
@@ -20,14 +20,13 @@ object Cov {
       remaining match {
         case Nil => bestSoFar
         case head :: tail => {
-          val newContinuous =
-            if (current.overlaps(head)) {
-              current.combine(head.term)
-            }
-            else {
-              head
-            }
-          getLongestCoverageHelper(
+          val newContinuous = if (current.overlaps(head)) {
+            current.combine(head)
+          }
+          else {
+            head
+          }
+          iter(
             if (newContinuous.term - newContinuous.eff > bestSoFar.term-bestSoFar.eff) {
               newContinuous
             }
