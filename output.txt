@@ -1,0 +1,4 @@
+[info] running com.jrynd.jobapplication.cigna.continuouscoverage.TestContinuousCoverage
+For coverages List(Cov(1,20), Cov(21,30), Cov(15,25), Cov(28,40), Cov(50,60), Cov(61,200))
+longest is Cov(50,200)
+[success] Total time: 5 s, completed Apr 18, 2020 9:11:55 PM
